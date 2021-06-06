@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getTodoState, getValue } from './store/selector'
 import { CountAction } from './store/action'
 import { bindActionCreators } from 'redux'
+import { Button } from 'antd'
 
 function App() {
   const todos = useSelector(getTodoState)
@@ -22,9 +23,13 @@ function App() {
       <h3>REACT TYPESCRIPT REDUX</h3>
       <div>COUNT: {value}</div>
       <div>
-        <button className="text-white bg-green-500 hover:bg-green-600 px-10 py-3" onClick={handleAdd}>
+        <button
+          className="text-white bg-green-500 hover:bg-green-600 px-10 py-3"
+          onClick={handleAdd}
+        >
           ADD
         </button>
+        <Button type="primary">Primary Button</Button>
       </div>
     </div>
   )
