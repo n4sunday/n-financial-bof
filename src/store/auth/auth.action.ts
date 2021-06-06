@@ -24,5 +24,6 @@ export const AuthAction = {
 
     let res = await AuthService.getUserByEmail(email)
     console.log('RES USER', res)
+    return res
   },
 }

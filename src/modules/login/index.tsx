@@ -1,12 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Form, Input, Button } from 'antd'
 import { useAuth } from '../../hook'
+import { useHistory } from 'react-router'
 
 const Login = () => {
-  const { signin, loading } = useAuth()
+  const history = useHistory()
+
+  const { signin, loading, user } = useAuth()
+
+  useEffect(() => {
+    if (user) {
+      history.push('/')
+    }
+  }, [user])
 
   const onFinish = async (values: any) => {
-    signin(values.email, values.password)
+    await signin(values.email, values.password)
   }
 
   const onFinishFailed = () => {
