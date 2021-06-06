@@ -1,37 +1,17 @@
-import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { getTodoState, getValue } from './store/selector'
-import { CountAction } from './store/action'
-import { bindActionCreators } from 'redux'
-import { Button } from 'antd'
+import React from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+
+import Home from './modules/home'
+import Financial from './modules/financial'
 
 function App() {
-  const todos = useSelector(getTodoState)
-  const value = useSelector(getValue)
-  const actions = bindActionCreators({ ...CountAction }, useDispatch())
-  // const dispatch = useDispatch()
-
-  console.log('todos', todos)
-
-  const handleAdd = () => {
-    // dispatch({ type: CountActionType.ADD_COUNT, payload: 2 })
-    actions.addCount(2)
-  }
-
   return (
-    <div className="flex justify-center flex-col items-center">
-      <h3>REACT TYPESCRIPT REDUX</h3>
-      <div>COUNT: {value}</div>
+    <Router>
       <div>
-        <button
-          className="text-white bg-green-500 hover:bg-green-600 px-10 py-3"
-          onClick={handleAdd}
-        >
-          ADD
-        </button>
-        <Button type="primary">Primary Button</Button>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/financial" component={Financial} />
       </div>
-    </div>
+    </Router>
   )
 }
 
