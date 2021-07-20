@@ -1,9 +1,9 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
-import Home from './modules/home'
-import Financial from './modules/financial'
-import Login from './modules/login'
+import Home from './pages/Home'
+import Finance from './pages/Finance'
+import Login from './pages/Login'
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <Switch>
         <Route exact path="/login" component={Login} />
         <Route exact path="/" component={Home} />
-        <Route exact path="/financial" component={Financial} />
+        <Route exact path="/finance" component={Finance} />
       </Switch>
     </BrowserRouter>
   )
