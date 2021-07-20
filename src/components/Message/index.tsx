@@ -1,13 +1,13 @@
 import { message } from 'antd'
 
-export const success = (text: string) => {
+export const successMessage = (text: string) => {
   message.success(text)
 }
 
-export const error = (text: string) => {
+export const errorMessage = (text: string) => {
   message.error(text)
 }
 
-export const warning = (text: string) => {
+export const warningMessage = (text: string) => {
   message.warning(text)
 }
