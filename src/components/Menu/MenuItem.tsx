@@ -1,14 +1,20 @@
 import React from 'react'
 
 interface IProps {
-  children: React.ReactNode
+  children?: React.ReactNode
   active?: boolean
+  name?: string
 }
 
 const MenuItem = (props: IProps) => {
   return (
-    <div className={`cursor-pointer w-12 h-12 ${props?.active ? 'bg-menu-active text-menu-active-icon':'bg-menu-normal text-menu-normal-icon'} hover:bg-menu-active hover:text-menu-active-icon flex items-center justify-center rounded-full`}>
+    <div
+      className={`flex items-center text-black px-5 py-4 border-l-2 ${
+        props?.active ? 'border-black' : 'border-[#f1f1f1]'
+      }`}
+    >
       {props?.children}
+      <span className="text-[16px] font-semibold">{props?.name}</span>
     </div>
   )
 }

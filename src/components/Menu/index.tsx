@@ -16,23 +16,25 @@ const Menu = () => {
     setOpen(false)
   }
 
-  console.log("location",location);
-  
+  console.log('location', location)
 
   return (
     <React.Fragment>
-      <Space className="bg-white min-w-[90px] flex flex-col justify-center items-center select-none ml-8 my-10 rounded-3xl">
-        <Link to="/">
-          <MenuItem active={location?.pathname === '/'}>
-            <HomeIcon className="h-6 w-6" />
-          </MenuItem>
-        </Link>
-        <Link to="/finance">
-          <MenuItem active={location?.pathname === '/finance'}>
-            <CurrencyDollarIcon className="h-6 w-6" />
-          </MenuItem>
-        </Link>
-      </Space>
+      <div className="bg-[#f1f1f1] min-w-[250px] m-3 flex flex-col items-center select-none">
+        <div className="mt-6 text-[30px] font-semibold">N-FINANCIAL</div>
+        <div className="mt-6 flex flex-col w-full">
+          <Link to="/">
+            <MenuItem name="Home" active={location?.pathname === '/'}>
+              <HomeIcon className="h-6 w-6 mr-4" />
+            </MenuItem>
+          </Link>
+          <Link to="/finance">
+            <MenuItem name="Finance" active={location?.pathname === '/finance'}>
+              <CurrencyDollarIcon className="h-6 w-6 mr-4" />
+            </MenuItem>
+          </Link>
+        </div>
+      </div>
     </React.Fragment>
   )
 }
