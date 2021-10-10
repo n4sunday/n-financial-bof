@@ -7,12 +7,17 @@ module.exports = {
         menu: {
           normal: '#f4f4f4',
           'normal-icon': '#cacaca',
-          active: "#ffdd6a",
-          'active-icon': "#000",
-        }
+          active: '#ffdd6a',
+          'active-icon': '#000',
+        },
       },
-      backgroundImage: (theme) => ({}),
-      backgroundSize: (theme) => ({}),
+      gridTemplateColumns: {
+        14: 'repeat(14, minmax(0, 1fr))',
+        16: 'repeat(16, minmax(0, 1fr))',
+        18: 'repeat(18, minmax(0, 1fr))',
+        20: 'repeat(20, minmax(0, 1fr))',
+        24: 'repeat(24, minmax(0, 1fr))',
+      },
       screens: {
         sm: '360px',
         md: '768px',

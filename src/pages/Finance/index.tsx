@@ -1,15 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Layout from '../../components/Layout'
-import Header from '../../modules/Financial/Header'
+import Header from '../../modules/Finance/Header'
+import PersonalFinance from 'modules/Finance/PersonalFinance'
+import { useCashFlowFinance } from 'modules/Finance/services/hooks'
 
-const Home = () => {
+const Finance = () => {
+  const { fetchData } = useCashFlowFinance()
+
+  useEffect(() => {
+    fetchData()
+  }, [])
+
   return (
     <Layout>
       <div className="">
         <Header />
       </div>
+      <PersonalFinance />
     </Layout>
   )
 }
 
-export default Home
+export default Finance
