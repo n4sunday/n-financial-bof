@@ -7,9 +7,9 @@ interface IProps {
 
 const Layout = (props: IProps) => {
   return (
-    <div className="w-scrren h-screen flex bg-app-light">
+    <div className="w-screen h-screen flex bg-[#f8f9fd]">
       <Menu />
-      <div className="h-scrren w-full overflow-y-auto bg-background px-10 py-10 flex flex-col">
+      <div className="h-screen w-full overflow-y-auto bg-[#f8f9fd] px-10 py-10 flex flex-col">
         {props.children}
       </div>
     </div>

@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "target": "ESNext",
+    "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "types": ["vite/client"],
     "allowJs": false,
     "skipLibCheck": false,
     "esModuleInterop": false,
@@ -14,7 +14,22 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react"
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "components/*": ["src/components/*"],
+      "pages/*": ["src/pages/*"],
+      "modules/*": ["src/modules/*"],
+      "interfaces/*": ["src/interfaces/*"],
+      "interfaces": ["src/interfaces"],
+      "config/*": ["src/config/*"],
+      "actions/*": ["src/actions/*"],
+      "stores": ["src/stores"],
+      "stores/*": ["src/stores/*"],
+      "styles/*": ["src/styles/*"],
+      "utils/*": ["src/utils/*"]
+    }
   },
-  "include": ["./src"]
+  "exclude": ["node_modules"],
+  "include": ["next-env.d.ts", "src/**/*", "pages/**/*"]
 }
